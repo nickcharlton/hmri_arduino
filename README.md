@@ -13,11 +13,11 @@ This happened because of the work on iDAT's [Bio-OS project][bioos] I did.
 Based on an Uno:
 
 Arduino Pin | HMRI Board
------------   ------------
-+5          | +5
+----------- | ------------
+5v          | 5v
 GND         | GND
-Analog In 5 | TX (I2C SCL)
-Analog In 4 | RX (I2C SDA)
+Analog In 5 | TX/SCL
+Analog In 4 | RX/SDA
 
 It's recommended that you use a 4.7 kOhm pullup, but I found it worked fine without.
 
