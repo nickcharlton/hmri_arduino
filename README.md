@@ -13,7 +13,7 @@ This happened because of the work on iDAT's [Bio-OS project][bioos] I did.
 Based on an Uno:
 
 Arduino Pin | HMRI Board
------------   ----------
+-----------   ------------
 +5          | +5
 GND         | GND
 Analog In 5 | TX (I2C SCL)
