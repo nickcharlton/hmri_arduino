@@ -9,7 +9,7 @@
  *
  */
 
-#include <wprogram.h>
+#include <Arduino.h>
 
 /*
  * hrmi_open: Initialize the I2C library

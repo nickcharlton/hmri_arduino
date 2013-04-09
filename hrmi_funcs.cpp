@@ -8,6 +8,7 @@
  *
  */
  
+ #include <Arduino.h>
  #include <Wire.h>
  #include "hrmi_funcs.h"
  
@@ -27,8 +28,8 @@ void hrmi_open()
 void hrmiCmdArg(byte addr, byte cmd, byte arg)
 {
   Wire.beginTransmission(addr);
-  Wire.send(cmd);
-  Wire.send(arg);
+  Wire.write(cmd);
+  Wire.write(arg);
   Wire.endTransmission();
 }
 
@@ -39,7 +40,7 @@ void hrmiCmdArg(byte addr, byte cmd, byte arg)
 void hrmiCmd(byte addr, byte cmd)
 {
   Wire.beginTransmission(addr);
-  Wire.send(cmd);
+  Wire.write(cmd);
   Wire.endTransmission();
 }
 
@@ -53,7 +54,7 @@ int hrmiGetData(byte addr, byte numBytes, byte* dataArray)
   Wire.requestFrom(addr, numBytes);
   if (Wire.available()) {
     for (int i=0; i<numBytes; i++)
-      dataArray[i] = Wire.receive();
+      dataArray[i] = Wire.read();
     return(0);
   }
   return(-1);
